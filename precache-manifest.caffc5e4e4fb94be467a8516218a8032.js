@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/scidata-ui-jsonforms-react/static/js/runtime~main.7900864c.js"
   },
   {
-    "revision": "8a1df120de9167b7186c",
-    "url": "/scidata-ui-jsonforms-react/static/js/main.ee368bae.chunk.js"
+    "revision": "a8e54f74bc159e38cf61",
+    "url": "/scidata-ui-jsonforms-react/static/js/main.087d8dc4.chunk.js"
   },
   {
     "revision": "365ba35bdd7bc6991550",
     "url": "/scidata-ui-jsonforms-react/static/js/2.f38ff531.chunk.js"
   },
   {
-    "revision": "8a1df120de9167b7186c",
+    "revision": "a8e54f74bc159e38cf61",
     "url": "/scidata-ui-jsonforms-react/static/css/main.58d921a0.chunk.css"
   },
   {
-    "revision": "5ae9f292c310a202d472cdcd5a2594c6",
+    "revision": "9eaf2b60358d1a37297913860bcce944",
     "url": "/scidata-ui-jsonforms-react/index.html"
   }
 ];
