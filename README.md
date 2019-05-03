@@ -10,3 +10,6 @@ Web UI for [SciData](https://github.com/stuchalk/scidata) JSON-LD creation using
  
  Browse to http://localhost:3000 to see the application in action.
 
+## GitHub Pages (for Developers)
+ * (Initial step) Execute `npm install gh-pages`
+ * Execute `npm deploy` to update 
