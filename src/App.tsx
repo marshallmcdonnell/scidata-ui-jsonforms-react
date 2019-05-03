@@ -40,9 +40,7 @@ class App extends React.Component<AppProps, any> {
       <div>
         <div className="App">
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo"/>
-            <h1 className="App-title">Welcome to JSON Forms with React</h1>
-            <p className="App-intro">More Forms. Less Code.</p>
+            <h1 className="App-title">JSON Forms for SciData</h1>
           </header>
         </div>
 
@@ -52,7 +50,7 @@ class App extends React.Component<AppProps, any> {
               variant={'display1'}
               className={classes.title}
             >
-              Bound data
+              Data State
             </Typography>
             <div className={classes.dataContent}>
               <pre>{dataAsString}</pre>
@@ -63,7 +61,7 @@ class App extends React.Component<AppProps, any> {
               variant={'display1'}
               className={classes.title}
             >
-              Rendered form
+              Form for Data Input
             </Typography>
             <div className={classes.demoform}>
               <JsonForms/>

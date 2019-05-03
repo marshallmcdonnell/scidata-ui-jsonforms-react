@@ -1,7 +1,8 @@
 {
-  "name": "jsonforms-react-seed",
+  "name": "scidata-ui-jsonforms-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://marshallmcdonnell.github.io/scidata-ui-jsonforms-react",
   "dependencies": {
     "@jsonforms/core": "2.2.3",
     "@jsonforms/material-renderers": "2.2.3",
@@ -24,6 +25,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
