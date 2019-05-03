@@ -1,13 +1,13 @@
 {
   "main.css": "/scidata-ui-jsonforms-react/static/css/main.58d921a0.chunk.css",
-  "main.js": "/scidata-ui-jsonforms-react/static/js/main.087d8dc4.chunk.js",
-  "main.js.map": "/scidata-ui-jsonforms-react/static/js/main.087d8dc4.chunk.js.map",
+  "main.js": "/scidata-ui-jsonforms-react/static/js/main.ee368bae.chunk.js",
+  "main.js.map": "/scidata-ui-jsonforms-react/static/js/main.ee368bae.chunk.js.map",
   "runtime~main.js": "/scidata-ui-jsonforms-react/static/js/runtime~main.7900864c.js",
   "runtime~main.js.map": "/scidata-ui-jsonforms-react/static/js/runtime~main.7900864c.js.map",
   "static/js/2.f38ff531.chunk.js": "/scidata-ui-jsonforms-react/static/js/2.f38ff531.chunk.js",
   "static/js/2.f38ff531.chunk.js.map": "/scidata-ui-jsonforms-react/static/js/2.f38ff531.chunk.js.map",
   "index.html": "/scidata-ui-jsonforms-react/index.html",
-  "precache-manifest.caffc5e4e4fb94be467a8516218a8032.js": "/scidata-ui-jsonforms-react/precache-manifest.caffc5e4e4fb94be467a8516218a8032.js",
+  "precache-manifest.d6f42ba7bf4bc8e0a25801f069e4c129.js": "/scidata-ui-jsonforms-react/precache-manifest.d6f42ba7bf4bc8e0a25801f069e4c129.js",
   "service-worker.js": "/scidata-ui-jsonforms-react/service-worker.js",
   "static/css/main.58d921a0.chunk.css.map": "/scidata-ui-jsonforms-react/static/css/main.58d921a0.chunk.css.map"
 }
