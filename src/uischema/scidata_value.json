@@ -1,0 +1,57 @@
+{
+  "type": "VerticalLayout",
+  "elements": [
+    {
+      "type": "Control",
+      "label": "JSON-LD Contexts",
+      "scope": "#/properties/@context"
+    },
+    {
+        "type": "Control",
+        "label": "ID for Value(s)",
+        "scope": "#/properties/@id"
+    },
+    {
+        "type": "Group",
+        "label": "Numeric Data",
+        "elements": [
+          {
+            "type": "Control",
+            "label": "Single Numeric Value",
+            "scope": "#/properties/numericvalue"
+          },
+          {
+            "type": "Control",
+            "label": "Numeric Array",
+            "scope": "#/properties/numericvaluearray"
+          },
+          {
+            "type": "Control",
+            "label": "Single Value",
+            "scope": "#/properties/value"
+          },
+          {
+            "type": "Control",
+            "label": "Value Array",
+            "scope": "#/properties/valuearray"
+          }
+        ]
+    },
+    {
+        "type": "Group",
+        "label": "Text Data",
+        "elements": [
+          {
+            "type": "Control",
+            "label": "Single Value",
+            "scope": "#/properties/textstring"
+          },
+          {
+            "type": "Control",
+            "label": "Array",
+            "scope": "#/properties/textstringarray"
+          }
+        ]
+    }
+  ]
+}

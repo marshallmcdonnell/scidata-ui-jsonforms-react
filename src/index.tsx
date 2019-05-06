@@ -5,11 +5,10 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { combineReducers, createStore, Reducer, AnyAction } from 'redux';
 import { Provider } from 'react-redux';
-import schema from './schema/scidata_unit.json';
-import uischema from './uischema/scidata_unit.json';
+import schema from './schema/scidata_value.json';
+import uischema from './uischema/scidata_value.json';
 import { Actions, jsonformsReducer, JsonFormsState, createAjv } from '@jsonforms/core';
 import { materialCells, materialRenderers } from '@jsonforms/material-renderers';
-
 
 const data = {};
 
