@@ -1,0 +1,16 @@
+{
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "title": "THE Schema",
+   "description": "JSON schema for a scientific unit of measure",
+   "type":"object",
+   "properties":{
+      "colours":{
+         "$ref":"example_definitions_colours.json#/definitions/colour_type",
+         "default": "Blue"
+      },
+      "shapes":{
+       "$ref":"example_definitions_shapes.json#/definitions/shape_type",
+       "default": "Round"
+      }
+   }
+ }
