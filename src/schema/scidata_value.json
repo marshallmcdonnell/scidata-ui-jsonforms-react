@@ -15,7 +15,7 @@
         "errortype": { "type": "string" },
         "sigfigs":  { "type": "integer" },
         "unit": { "type": "string" },
-        "unitstr": { "type": "string" },
+        "unitstr": { "type": "string"  },
         "unitref": { "type": "string" }
       }
     },
@@ -69,18 +69,7 @@
 
   "properties": {
     "@context": {
-      "type": "array",
-      "items": { 
-        "anyOf" : [ 
-          {
-            "type": "string"
-            }, 
-            {
-              "type": "object",
-              "additionalProperties": true
-            } 
-          ]
-      },
+      "$ref": "scidata_context.json#/@context",
       "default": [
         "http://stuchalk.github.io/scidata/contexts/scidata_value.jsonld",
         "http://stuchalk.github.io/scidata/contexts/scidata_unit.jsonld",
@@ -97,6 +86,7 @@
      "textstring": { "$ref": "#/definitions/textString_def" },
      "textstringarray": { "$ref": "#/definitions/textStringArray_def" },
      "value": { "$ref": "#/definitions/numericValue_def" },
-     "valuearray": { "$ref": "#/definitions/numericValueArray_def" }
+     "valuearray": { "$ref": "#/definitions/numericValueArray_def" },
+     "exact": { "$ref": "scidata_unit.json#/properties/exact"}
   }
 }
