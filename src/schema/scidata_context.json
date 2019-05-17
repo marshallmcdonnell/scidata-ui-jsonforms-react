@@ -1,0 +1,16 @@
+{
+    "@context": {
+        "type": "array",
+        "items": { 
+        "anyOf" : [ 
+            {
+            "type": "string"
+            }, 
+            {
+                "type": "object",
+                "additionalProperties": true
+            } 
+            ]
+        }
+    }
+}
