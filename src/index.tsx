@@ -8,25 +8,16 @@ import { Actions, jsonformsReducer, JsonFormsState, createAjv } from '@jsonforms
 import { materialCells, materialRenderers } from '@jsonforms/material-renderers';
 
 
-import contextSchema from './schema/json/context.json';
+import contextSchema from './state/ducks/scidata/schemas/context.json';
 import unitSchema from './schema/json/unit.json';
 import valueSchema from './schema/json/value.json';
 import uischema from './schema/ui/value.json';
 
+import { contextSchemaIdentifier, contextSchemaResolver } from './state/ducks/scidata/context/resolver'
+
 //-------------------------------------------------//
 // Context Sub-Schema
 // Location -> src/state/ducks/scidata/context/schema.js
-const contextSchemaIdentifier = 'context.json'; 
-const contextSchemaResolver = {
-  order: 1,
-  canRead: function(file: AnyAction) {
-      return file.url.indexOf(contextSchemaIdentifier) !== -1;
-  },
-  read: function() {
-      return JSON.stringify(contextSchema)
-  }
-}
-// export defaul contextSchemaResolver
 
 //-------------------------------------------------//
 // Unit Sub-Schema
