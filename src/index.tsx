@@ -9,32 +9,12 @@ import { materialCells, materialRenderers } from '@jsonforms/material-renderers'
 
 
 import contextSchema from './state/ducks/scidata/schemas/context.json';
-import unitSchema from './schema/json/unit.json';
+import unitSchema from './state/ducks/scidata/schemas/unit.json';
 import valueSchema from './schema/json/value.json';
 import uischema from './schema/ui/value.json';
 
 import { contextSchemaIdentifier, contextSchemaResolver } from './state/ducks/scidata/context/resolver'
-
-//-------------------------------------------------//
-// Context Sub-Schema
-// Location -> src/state/ducks/scidata/context/schema.js
-
-//-------------------------------------------------//
-// Unit Sub-Schema
-// Location -> src/state/ducks/scidata/unit/schema.js
-const unitSchemaIdentifier = 'unit.json';
-const unitSchemaResolver = {
-  order: 1,
-  canRead: function(file: AnyAction) {
-      return file.url.indexOf(unitSchemaIdentifier) !== -1;
-  },
-  read: function() {
-      return JSON.stringify(unitSchema)
-  }
-}
-// export defaul unitSchemaResolver
-
-//-------------------------------------------------//
+import { unitSchemaIdentifier, unitSchemaResolver } from './state/ducks/scidata/unit/resolver'
 
 // Initial state for redux
 // Location -> (here? will be passed into 'configureStore', I think)
