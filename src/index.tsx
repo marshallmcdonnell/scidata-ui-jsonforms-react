@@ -2,44 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 import { combineReducers, createStore, Reducer, AnyAction } from 'redux';
 import { Provider } from 'react-redux';
 import { Actions, jsonformsReducer, JsonFormsState, createAjv } from '@jsonforms/core';
 import { materialCells, materialRenderers } from '@jsonforms/material-renderers';
 
 
-import contextSchema from './schema/scidata_context.json';
-import unitSchema from './schema/scidata_unit.json';
-import valueSchema from './schema/scidata_value.json';
-import uischema from './uischema/scidata_value.json';
+import contextSchema from './schema/json/context.json';
+import unitSchema from './schema/json/unit.json';
+import valueSchema from './schema/json/value.json';
+import uischema from './schema/ui/value.json';
 
-const data = {};
-
-const initState: JsonFormsState = {
-    jsonforms: {
-      cells: materialCells,
-      renderers: materialRenderers
-    }
-};
-
-const ajv = createAjv({
-    useDefaults: true
-})
-
-
-const contextSchemaIdentifier = 'scidata_context.json';
-const unitSchemaIdentifier = 'scidata_unit.json';
-
-ajv.addSchema(contextSchema, contextSchemaIdentifier);
-ajv.addSchema(unitSchema, unitSchemaIdentifier);
-
-
-const rootReducer: Reducer<JsonFormsState, AnyAction> = combineReducers({ jsonforms: jsonformsReducer() });
-const store = createStore(rootReducer, initState);
-
-
-// Allow json-schema-ref-resolver to resolve same schema
+//-------------------------------------------------//
+// Context Sub-Schema
+// Location -> src/state/ducks/scidata/context/schema.js
+const contextSchemaIdentifier = 'context.json'; 
 const contextSchemaResolver = {
   order: 1,
   canRead: function(file: AnyAction) {
@@ -49,7 +26,12 @@ const contextSchemaResolver = {
       return JSON.stringify(contextSchema)
   }
 }
+// export defaul contextSchemaResolver
 
+//-------------------------------------------------//
+// Unit Sub-Schema
+// Location -> src/state/ducks/scidata/unit/schema.js
+const unitSchemaIdentifier = 'unit.json';
 const unitSchemaResolver = {
   order: 1,
   canRead: function(file: AnyAction) {
@@ -59,8 +41,47 @@ const unitSchemaResolver = {
       return JSON.stringify(unitSchema)
   }
 }
+// export defaul unitSchemaResolver
 
-// configuration object for JSONForms
+//-------------------------------------------------//
+
+// Initial state for redux
+// Location -> (here? will be passed into 'configureStore', I think)
+const scidataState: JsonFormsState = {
+  jsonforms: {
+    cells: materialCells,
+    renderers: materialRenderers
+  }
+};
+
+//-------------------------------------------------//
+
+// export default function configureStore( scidataState ) {
+
+// Combine all the sub / "ducks" reducers into the primary
+// Location -> src/state/ducks/scidata
+const rootReducer: Reducer<JsonFormsState, AnyAction> = combineReducers({ jsonforms: jsonformsReducer() });
+
+// Create Redux store
+// Location -> src/state/store.js
+const store = createStore(rootReducer, scidataState);
+
+
+//-------------------------------------------------//
+/* 
+Location -> src/state/ducks/scidata/index.js
+Export -> jsonFormsConfiguration
+
+imports:
+ - contextSchema from ./src/state/ducks/scidata/schema/context.json
+*/
+// AJV: Another Json Schema Validator
+const ajv = createAjv({
+  useDefaults: true
+})
+ajv.addSchema(contextSchema, contextSchemaIdentifier);
+ajv.addSchema(unitSchema, unitSchemaIdentifier);
+
 const jsonFormsConfiguration = {
   ajv: ajv,
   refParserOptions: {
@@ -71,7 +92,8 @@ const jsonFormsConfiguration = {
   }
 }
 
-// Add configuration to JSONForms
+const data = {};
+
 store.dispatch(
   Actions.init(
     data,
@@ -81,6 +103,9 @@ store.dispatch(
   )
 );
 
+// export store
+
+//-------------------------------------------------//
 
 ReactDOM.render(
   <Provider store={store}>
@@ -88,4 +113,4 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-registerServiceWorker();
+

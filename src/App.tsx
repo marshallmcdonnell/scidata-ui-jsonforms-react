@@ -5,7 +5,6 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import {getData, JsonFormsState} from '@jsonforms/core';
-import logo from './logo.svg';
 import './App.css';
 import createStyles from "@material-ui/core/styles/createStyles";
 
