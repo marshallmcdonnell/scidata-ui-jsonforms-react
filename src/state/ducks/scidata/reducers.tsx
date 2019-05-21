@@ -1,16 +1,7 @@
-import { combineReducers, Reducer, AnyAction } from 'redux';
-import { jsonformsReducer, JsonFormsState } from '@jsonforms/core';
+import { combineReducers} from 'redux';
+import { jsonformsReducer } from '@jsonforms/core';
 
-/*
-const scidataState: JsonFormsState = {
-    jsonforms: {
-      cells: materialCells,
-      renderers: materialRenderers
-    }
-  };
-*/
-
-const reducer: Reducer<JsonFormsState, AnyAction> = combineReducers({ 
+const reducer = combineReducers({ 
         jsonforms: jsonformsReducer()
 });
 
