@@ -16,10 +16,10 @@ import uischema from './state/ducks/scidata/uiSchema.json';
 import { contextSchemaIdentifier, contextSchemaResolver } from './state/ducks/scidata/context/resolver'
 import { unitSchemaIdentifier, unitSchemaResolver } from './state/ducks/scidata/unit/resolver'
 
+import { default as scidataJsonFormsConfiguration } from './state/ducks/scidata/config'
+
 import { default as rootReducer } from './state/ducks/scidata'
 
-// Initial state for redux
-// Location -> (here? will be passed into 'configureStore', I think)
 const scidataState: JsonFormsState = {
   jsonforms: {
     cells: materialCells,
@@ -27,39 +27,7 @@ const scidataState: JsonFormsState = {
   }
 };
 
-//-------------------------------------------------//
-
-// export default function configureStore( scidataState ) {
-
-
-// Create Redux store
-// Location -> src/state/store.js
 const store = createStore(rootReducer, scidataState);
-
-//-------------------------------------------------//
-/* 
-Location -> src/state/ducks/scidata/index.js
-Export -> jsonFormsConfiguration
-
-imports:
- - contextSchema from ./src/state/ducks/scidata/schema/context.json
-*/
-// AJV: Another Json Schema Validator
-const ajv = createAjv({
-  useDefaults: true
-})
-ajv.addSchema(contextSchema, contextSchemaIdentifier);
-ajv.addSchema(unitSchema, unitSchemaIdentifier);
-
-const jsonFormsConfiguration = {
-  ajv: ajv,
-  refParserOptions: {
-    resolve: {
-      foo: contextSchemaResolver,
-      bar: unitSchemaResolver
-    } as any
-  }
-}
 
 const data = {};
 
@@ -68,13 +36,9 @@ store.dispatch(
     data,
     jsonSchema,
     uischema,
-    jsonFormsConfiguration
+    scidataJsonFormsConfiguration
   )
 );
-
-// export store
-
-//-------------------------------------------------//
 
 ReactDOM.render(
   <Provider store={store}>
