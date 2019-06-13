@@ -1,0 +1,68 @@
+{
+  "type": "VerticalLayout",
+  "elements": [
+    {
+      "type": "Control",
+      "label": "JSON-LD Contexts",
+      "scope": "#/properties/@context"
+    },
+    {
+      "type": "Control",
+      "label": "ID for Parameter(s)",
+      "scope": "#/properties/@id"
+    },
+    {
+      "type": "Control",
+      "label": "Scope",
+      "scope": "#/properties/scope"
+    },
+    {
+      "type": "Group",
+      "label": "Property",
+      "elements": [
+        {
+          "type": "Control",
+          "label": "Property that the Parameter measures",
+          "scope": "#/properties/property"
+        },
+        {
+          "type": "Control",
+          "label": "External Reference URI to Property that the Parameter measures",
+          "scope": "#/properties/propertyref"
+        }
+      ]
+    },
+    {
+      "type": "Group",
+      "label": "Quantity",
+      "elements": [
+        {
+          "type": "Control",
+          "label": "Quantity",
+          "scope": "#/properties/quantity"
+        },
+        {
+          "type": "Control",
+          "label": "External Reference URI to Quantity",
+          "scope": "#/properties/quantityref"
+        }
+      ]
+    },
+    {
+      "type": "Group",
+      "label": "Numeric Data",
+      "elements": [
+        {
+          "type": "Control",
+          "label": "Single Value",
+          "scope": "#/properties/value"
+        },
+        {
+          "type": "Control",
+          "label": "Value Array",
+          "scope": "#/properties/valuearray"
+        }
+      ]
+    }
+  ]
+}
