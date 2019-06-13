@@ -13,23 +13,45 @@
     },
     {
       "type": "Control",
-      "label": "Exact value?",
-      "scope": "#/properties/exact"
+      "label": "Scope",
+      "scope": "#/properties/scope"
+    },
+    {
+      "type": "Group",
+      "label": "Property",
+      "elements": [
+        {
+          "type": "Control",
+          "label": "Property that the Parameter measures",
+          "scope": "#/properties/property"
+        },
+        {
+          "type": "Control",
+          "label": "External Reference URI to Property that the Parameter measures",
+          "scope": "#/properties/propertyref"
+        }
+      ]
+    },
+    {
+      "type": "Group",
+      "label": "Quantity",
+      "elements": [
+        {
+          "type": "Control",
+          "label": "Quantity",
+          "scope": "#/properties/quantity"
+        },
+        {
+          "type": "Control",
+          "label": "External Reference URI to Quantity",
+          "scope": "#/properties/quantityref"
+        }
+      ]
     },
     {
       "type": "Group",
       "label": "Numeric Data",
       "elements": [
-        {
-          "type": "Control",
-          "label": "Single Numeric Value",
-          "scope": "#/properties/numericvalue"
-        },
-        {
-          "type": "Control",
-          "label": "Numeric Array",
-          "scope": "#/properties/numericvaluearray"
-        },
         {
           "type": "Control",
           "label": "Single Value",
@@ -39,22 +61,6 @@
           "type": "Control",
           "label": "Value Array",
           "scope": "#/properties/valuearray"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "Text Data",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "Single Value",
-          "scope": "#/properties/textstring"
-        },
-        {
-          "type": "Control",
-          "label": "Array",
-          "scope": "#/properties/textstringarray"
         }
       ]
     }
