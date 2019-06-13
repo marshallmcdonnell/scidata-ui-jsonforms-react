@@ -1,35 +1,25 @@
 import { createStore } from "redux";
-import { Actions } from '@jsonforms/core';
+import { Actions } from "@jsonforms/core";
 
 //import * as reducers from "./ducks";
-import { default as rootReducer } from './ducks/scidata'
+import { default as rootReducer } from "./ducks/scidata";
 
+import { default as scidataJsonFormsConfiguration } from "./ducks/scidata/config";
 
-import scidataJsonSchema from './ducks/scidata/jsonSchema.json';
-import scidataUiSchema from './ducks/scidata/uiSchema.json';
-import { default as scidataJsonFormsConfiguration} from './ducks/scidata/config'
+export default function configureStore(initialState) {
+  //const rootReducer = combineReducers( reducers );
 
+  const store = createStore(rootReducer, initialState);
+  console.log(store.getState());
 
-export default function configureStore( initialState ) {
-    //const rootReducer = combineReducers( reducers );
+  // Combine sub-schema to single for intial store
+  const data = {};
+  const schema = {};
+  const uischema = {};
 
-    const store = createStore(
-        rootReducer,
-        initialState,
-    );
-    console.log(store.getState())
-       
-    const data = {};
-    
-    store.dispatch(
-      Actions.init(
-          data,
-          scidataJsonSchema,
-          scidataUiSchema,
-          scidataJsonFormsConfiguration
-      )
-    )
+  store.dispatch(
+    Actions.init(data, schema, uischema, scidataJsonFormsConfiguration)
+  );
 
-    return store;
+  return store;
 }
-
