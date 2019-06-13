@@ -69,7 +69,7 @@
 
   "properties": {
     "@context": {
-      "$ref": "scidata_context.json#/@context",
+      "$ref": "context.json#/@context",
       "default": [
         "http://stuchalk.github.io/scidata/contexts/scidata_value.jsonld",
         "http://stuchalk.github.io/scidata/contexts/scidata_unit.jsonld",
@@ -81,12 +81,12 @@
       "type": "string",
       "default": ""
      },
-     "numericvalue": { "$ref": "#/definitions/numericValue_def" },
+     "numericvalue": { "$ref": "#/definitions/numericValue_def", "default": "5" },
      "numericvaluearray": { "$ref": "#/definitions/numericValueArray_def" },
      "textstring": { "$ref": "#/definitions/textString_def" },
      "textstringarray": { "$ref": "#/definitions/textStringArray_def" },
      "value": { "$ref": "#/definitions/numericValue_def" },
      "valuearray": { "$ref": "#/definitions/numericValueArray_def" },
-     "exact": { "$ref": "scidata_unit.json#/properties/exact"}
+     "exact": { "$ref": "unit.json#/properties/exact"}
   }
 }

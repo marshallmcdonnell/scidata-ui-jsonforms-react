@@ -1,91 +1,53 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-import { combineReducers, createStore, Reducer, AnyAction } from 'redux';
+import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Actions, jsonformsReducer, JsonFormsState, createAjv } from '@jsonforms/core';
+import { JsonFormsState } from '@jsonforms/core';
 import { materialCells, materialRenderers } from '@jsonforms/material-renderers';
 
+import configureStore from './state/store';
+import SciDataTabs from './views/components/SciDataTabs';
 
-import contextSchema from './schema/scidata_context.json';
-import unitSchema from './schema/scidata_unit.json';
-import valueSchema from './schema/scidata_value.json';
-import uischema from './uischema/scidata_value.json';
+import UnitSchema from './state/ducks/scidata/schemas/unit.json';
+import UnitUISchema from './state/ducks/scidata/unit/uiSchema.json';
+import ValueSchema from './state/ducks/scidata/schemas/value.json';
+import ValueUISchema from './state/ducks/scidata/value/uiSchema.json';
 
-const data = {};
-
-const initState: JsonFormsState = {
-    jsonforms: {
-      cells: materialCells,
-      renderers: materialRenderers
-    }
+const sciDataInitialState: JsonFormsState = {
+  jsonforms: {
+    cells: materialCells,
+    renderers: materialRenderers
+  }
 };
 
-const ajv = createAjv({
-    useDefaults: true
-})
+const store = configureStore(sciDataInitialState);
 
-
-const contextSchemaIdentifier = 'scidata_context.json';
-const unitSchemaIdentifier = 'scidata_unit.json';
-
-ajv.addSchema(contextSchema, contextSchemaIdentifier);
-ajv.addSchema(unitSchema, unitSchemaIdentifier);
-
-
-const rootReducer: Reducer<JsonFormsState, AnyAction> = combineReducers({ jsonforms: jsonformsReducer() });
-const store = createStore(rootReducer, initState);
-
-
-// Allow json-schema-ref-resolver to resolve same schema
-const contextSchemaResolver = {
-  order: 1,
-  canRead: function(file: AnyAction) {
-      return file.url.indexOf(contextSchemaIdentifier) !== -1;
+const datasets = [
+  {
+    name: "unit",
+    path: "unit",
+    title: "unit",
+    schema: UnitSchema,
+    uischema: UnitUISchema,
+    data: { "@context": ["http://stuchalk.github.io/scidata/contexts/scidata_unit.jsonld"]}
   },
-  read: function() {
-      return JSON.stringify(contextSchema)
+  {
+    name: "value",
+    path: "value",
+    title: "value",
+    schema: ValueSchema,
+    uischema: ValueUISchema,
+    data: { "@context": ["http://stuchalk.github.io/scidata/contexts/scidata_value.jsonld"]}
   }
-}
+]
 
-const unitSchemaResolver = {
-  order: 1,
-  canRead: function(file: AnyAction) {
-      return file.url.indexOf(unitSchemaIdentifier) !== -1;
-  },
-  read: function() {
-      return JSON.stringify(unitSchema)
-  }
-}
-
-// configuration object for JSONForms
-const jsonFormsConfiguration = {
-  ajv: ajv,
-  refParserOptions: {
-    resolve: {
-      foo: contextSchemaResolver,
-      bar: unitSchemaResolver
-    } as any
-  }
-}
-
-// Add configuration to JSONForms
-store.dispatch(
-  Actions.init(
-    data,
-    valueSchema,
-    uischema,
-    jsonFormsConfiguration
-  )
-);
-
-
-ReactDOM.render(
+const App = () => (
   <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
+    <SciDataTabs
+      datasets={datasets}
+    />
+  </Provider>
 );
-registerServiceWorker();
+
+
+render(<App />, document.getElementById('root'));
+
