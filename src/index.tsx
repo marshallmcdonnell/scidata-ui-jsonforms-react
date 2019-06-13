@@ -7,10 +7,12 @@ import { materialCells, materialRenderers } from '@jsonforms/material-renderers'
 import configureStore from './state/store';
 import SciDataTabs from './views/components/SciDataTabs';
 
-import UnitSchema from './state/ducks/scidata/schemas/unit.json';
-import UnitUISchema from './state/ducks/scidata/unit/uiSchema.json';
-import ValueSchema from './state/ducks/scidata/schemas/value.json';
-import ValueUISchema from './state/ducks/scidata/value/uiSchema.json';
+import schemas from './state/ducks/scidata/schema';
+import uischemas from './state/ducks/scidata/uischema';
+import datasets from './state/ducks/scidata/datasets';
+
+console.log(schemas)
+console.log(uischemas)
 
 const sciDataInitialState: JsonFormsState = {
   jsonforms: {
@@ -21,24 +23,7 @@ const sciDataInitialState: JsonFormsState = {
 
 const store = configureStore(sciDataInitialState);
 
-const datasets = [
-  {
-    name: "unit",
-    path: "unit",
-    title: "unit",
-    schema: UnitSchema,
-    uischema: UnitUISchema,
-    data: { "@context": ["http://stuchalk.github.io/scidata/contexts/scidata_unit.jsonld"]}
-  },
-  {
-    name: "value",
-    path: "value",
-    title: "value",
-    schema: ValueSchema,
-    uischema: ValueUISchema,
-    data: { "@context": ["http://stuchalk.github.io/scidata/contexts/scidata_value.jsonld"]}
-  }
-]
+
 
 const App = () => (
   <Provider store={store}>

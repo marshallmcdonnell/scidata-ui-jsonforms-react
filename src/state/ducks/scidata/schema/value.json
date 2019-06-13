@@ -81,7 +81,7 @@
       "type": "string",
       "default": ""
      },
-     "numericvalue": { "$ref": "#/definitions/numericValue_def", "default": "5" },
+     "numericvalue": { "$ref": "#/definitions/numericValue_def" },
      "numericvaluearray": { "$ref": "#/definitions/numericValueArray_def" },
      "textstring": { "$ref": "#/definitions/textString_def" },
      "textstringarray": { "$ref": "#/definitions/textStringArray_def" },

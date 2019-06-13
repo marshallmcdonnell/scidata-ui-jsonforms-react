@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Value Schema",
+  "description": "JSON schema for a scientific value",
+  "type": "object",
+
+  "definitions": {
+    "numericValue_def": {
+      "type": "object",
+      "properties": {
+        "@id": { "type": "string" }
+      }
+    }
+  },
+  "properties": {
+    "@context": {
+      "$ref": "context.json#/@context",
+      "default": [
+        "http://stuchalk.github.io/scidata/contexts/scidata_parameter.jsonld",
+        {
+          "@base": "http://stuchalk.github.io/scidata/examples/parameter.jsonld#"
+        }
+      ]
+    },
+    "@id": {
+      "type": "string",
+      "default": ""
+    },
+    "scope": { "type": "string" },
+    "quantity": { "type": "string" },
+    "quantityref": { "type": "string" },
+    "property": { "type": "string" },
+    "propertyref": { "type": "string" },
+    "numericvalue": {
+      "$ref": "#/definitions/numericValue_def",
+      "default": "5"
+    },
+    "value": {
+      "oneOf": [
+        { "$ref": "value.json#/properties/numericvalue" },
+        { "$ref": "value.json#/properties/textstring" }
+      ]
+    },
+    "valuearray": {
+      "oneOf": [
+        { "$ref": "unit.json#/properties/numericvaluearray" },
+        { "$ref": "unit.json#/properties/textstringarray" }
+      ]
+    }
+  }
+}

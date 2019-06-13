@@ -1,5 +1,5 @@
 import { AnyAction } from 'redux';
-import contextSchema from '../schemas/context.json';
+import contextSchema from '../schema/context.json';
 
 export const contextSchemaIdentifier = 'context.json'; 
 

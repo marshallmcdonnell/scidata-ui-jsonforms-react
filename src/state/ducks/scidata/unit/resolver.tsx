@@ -1,5 +1,5 @@
 import { AnyAction } from 'redux';
-import unitSchema from '../schemas/unit.json';
+import unitSchema from '../schema/unit.json';
 
 export const unitSchemaIdentifier = 'unit.json';
 
