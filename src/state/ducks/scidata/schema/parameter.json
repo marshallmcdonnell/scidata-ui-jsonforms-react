@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Value Schema",
-  "description": "JSON schema for a scientific value",
+  "title": "Parameter Schema",
+  "description": "JSON schema for a parameter",
   "type": "object",
   "properties": {
     "@context": {
