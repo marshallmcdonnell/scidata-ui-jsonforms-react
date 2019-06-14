@@ -13,7 +13,7 @@
     },
     {
       "type": "Control",
-      "label": "Scope",
+      "label": "Scope: which facet is this measured on (internal uri)",
       "scope": "#/properties/scope"
     },
     {
@@ -55,12 +55,12 @@
         {
           "type": "Control",
           "label": "Single Value",
-          "scope": "#/properties/value"
+          "scope": "#/properties/parameter"
         },
         {
           "type": "Control",
           "label": "Value Array",
-          "scope": "#/properties/valuearray"
+          "scope": "#/properties/parameterArray"
         }
       ]
     }
