@@ -13,19 +13,33 @@
     },
     {
       "type": "Control",
+      "label": "Name for Dataset",
+      "scope": "#/properties/name"
+    },
+    {
+      "type": "Control",
+      "label": "Scope: which facet is this measured on (internal uri)",
+      "scope": "#/properties/scope"
+    },
+    {
+      "type": "Control",
       "label": "Source: which aspect was used to obtain data (internal uri)",
       "scope": "#/properties/source"
     },
     {
-      "type": "Group",
-      "label": "Single Data Point(s)",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "Data Point(s)",
-          "scope": "#/properties/datapoint"
-        }
-      ]
+      "type": "Control",
+      "label": "Data Point(s)",
+      "scope": "#/properties/datapoint"
+    },
+    {
+      "type": "Control",
+      "label": "Data Series",
+      "scope": "#/properties/dataseries"
+    },
+    {
+      "type": "Control",
+      "label": "Data Group",
+      "scope": "#/properties/datagroup"
     }
   ]
 }

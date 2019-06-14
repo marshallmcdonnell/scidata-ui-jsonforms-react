@@ -4,16 +4,59 @@
   "description": "JSON schema for scientific datasets",
   "type": "object",
   "definitions": {
-    "parameterValue_def": {
+    "dataSeries_def": {
       "type": "object",
+      "id": "dataGroupID",
       "properties": {
         "@id": { "type": "string" },
-        "scope": { "$ref": "parameter.json#/properties/scope" },
-        "quantity": { "$ref": "parameter.json#/properties/quantity" },
-        "quantityref": { "$ref": "parameter.json#/properties/quantityref" },
-        "property": { "$ref": "parameter.json#/properties/property" },
-        "propertyref": { "$ref": "parameter.json#/properties/propertyref" },
-        "value": { "$ref": "parameter.json#/properties/value" }
+        "type": { "type": "string" },
+        "axis": { "type": "string" },
+        "axisLabel": { "type": "string" },
+        "parameterArray": {
+          "$ref": "parameter.json#/properties/parameterArray"
+        },
+        "datapoints": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "dataGroup_def": {
+      "type": "object",
+      "id": "dataGroupID",
+      "properties": {
+        "@id": { "type": "string" },
+        "name": { "type": "string" },
+        "source": { "type": "string" },
+        "scope": { "type": "string" },
+        "attributes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "datapoint": {
+          "type": "array",
+          "items": { "$ref": "parameter.json#/properties/parameter" }
+        },
+        "dataseries": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/dataSeries_def" }
+        },
+        "datagroup": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "datapoints": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "dataserieses": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "datagroups": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
       }
     }
   },
@@ -28,10 +71,24 @@
       "type": "string",
       "default": ""
     },
+    "name": { "type": "string" },
     "source": { "type": "string" },
-    "datapoint": { 
+    "scope": { "type": "string" },
+    "attributes": {
       "type": "array",
-      "items": { "$ref": "#/definitions/parameterValue_def" }
+      "items": { "type": "string" }
+    },
+    "datapoint": {
+      "type": "array",
+      "items": { "$ref": "parameter.json#/properties/parameter" }
+    },
+    "dataseries": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/dataSeries_def" }
+    },
+    "datagroup": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/dataGroup_def" }
     }
   }
 }
