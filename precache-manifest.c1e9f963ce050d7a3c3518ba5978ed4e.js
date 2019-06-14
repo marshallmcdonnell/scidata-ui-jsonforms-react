@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "cd6c777f1945164224dee082abaea03a",
-    "url": "/scidata-ui-jsonforms-react/static/media/outline-icons.cd6c777f.woff2"
+    "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
+    "url": "/scidata-ui-jsonforms-react/static/media/outline-icons.ef60a4f6.woff"
   },
   {
     "revision": "bc59cf61f63a9f3f8af4",
@@ -20,12 +20,12 @@ self.__precacheManifest = [
     "url": "/scidata-ui-jsonforms-react/static/media/flags.9c74e172.png"
   },
   {
-    "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
-    "url": "/scidata-ui-jsonforms-react/static/media/icons.8e3c7f55.eot"
-  },
-  {
     "revision": "0ab54153eeeca0ce03978cc463b257f7",
     "url": "/scidata-ui-jsonforms-react/static/media/icons.0ab54153.woff2"
+  },
+  {
+    "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
+    "url": "/scidata-ui-jsonforms-react/static/media/icons.8e3c7f55.eot"
   },
   {
     "revision": "faff92145777a3cbaf8e7367b4807987",
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/scidata-ui-jsonforms-react/static/js/runtime~main.7900864c.js"
   },
   {
-    "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
-    "url": "/scidata-ui-jsonforms-react/static/media/outline-icons.ef60a4f6.woff"
+    "revision": "cd6c777f1945164224dee082abaea03a",
+    "url": "/scidata-ui-jsonforms-react/static/media/outline-icons.cd6c777f.woff2"
   },
   {
     "revision": "ad97afd3337e8cda302d10ff5a4026b8",
