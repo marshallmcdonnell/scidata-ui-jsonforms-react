@@ -8,61 +8,61 @@
     "numericValue_def": {
       "type": "object",
       "properties": {
-        "@id":    { "type": "string" },
-        "datatype":   { "type": "string" },
-        "number":   { "type": "number" },
+        "@id": { "type": "string" },
+        "datatype": { "type": "string" },
+        "number": { "type": "number" },
         "error": { "type": "number" },
         "errortype": { "type": "string" },
-        "sigfigs":  { "type": "integer" },
+        "sigfigs": { "type": "integer" },
         "unit": { "type": "string" },
-        "unitstr": { "type": "string"  },
+        "unitstr": { "type": "string" },
         "unitref": { "type": "string" }
       }
     },
     "numericValueArray_def": {
       "type": "object",
       "properties": {
-        "@id":    { "type": "string" },
-        "datatype":   { "type": "string" },
-        "numberarray":   { 
+        "@id": { "type": "string" },
+        "datatype": { "type": "string" },
+        "numberarray": {
           "type": "array",
           "items": {
             "type": "number"
-          } 
+          }
         },
         "error": { "type": "number" },
-        "errorarray":   { 
+        "errorarray": {
           "type": "array",
           "items": {
             "type": "number"
-          } 
+          }
         },
         "errortype": { "type": "string" },
-        "sigfigs":  { "type": "integer" }
+        "sigfigs": { "type": "integer" }
       },
-      "additionalProperties": true   
+      "additionalProperties": true
     },
     "textString_def": {
       "type": "object",
       "properties": {
-        "@id":    { "type": "string" },
-        "text":   { "type": "string" },
+        "@id": { "type": "string" },
+        "text": { "type": "string" },
         "texttype": { "type": "string" },
-        "language":  { "type": "integer" }
+        "language": { "type": "integer" }
       }
     },
     "textStringArray_def": {
       "type": "object",
       "properties": {
-        "@id":    { "type": "string" },
-        "textarray":   { 
+        "@id": { "type": "string" },
+        "textarray": {
           "type": "array",
           "items": {
             "type": "string"
           }
         },
         "texttype": { "type": "string" },
-        "language":  { "type": "string" }
+        "language": { "type": "string" }
       }
     }
   },
@@ -73,20 +73,19 @@
       "default": [
         "http://stuchalk.github.io/scidata/contexts/scidata_value.jsonld",
         "http://stuchalk.github.io/scidata/contexts/scidata_unit.jsonld",
-        {"qudt": "http://www.qudt.org/qudt/owl/1.0.0/unit.owl#"},
-        {"@base": "http://stuchalk.github.io/scidata/examples/value.jsonld#"}
+        { "qudt": "http://www.qudt.org/qudt/owl/1.0.0/unit.owl#" }
       ]
     },
-    "@id": { 
+    "@id": {
       "type": "string",
       "default": ""
-     },
-     "numericvalue": { "$ref": "#/definitions/numericValue_def" },
-     "numericvaluearray": { "$ref": "#/definitions/numericValueArray_def" },
-     "textstring": { "$ref": "#/definitions/textString_def" },
-     "textstringarray": { "$ref": "#/definitions/textStringArray_def" },
-     "value": { "$ref": "#/definitions/numericValue_def" },
-     "valuearray": { "$ref": "#/definitions/numericValueArray_def" },
-     "exact": { "$ref": "unit.json#/properties/exact"}
+    },
+    "numericvalue": { "$ref": "#/definitions/numericValue_def" },
+    "numericvaluearray": { "$ref": "#/definitions/numericValueArray_def" },
+    "textstring": { "$ref": "#/definitions/textString_def" },
+    "textstringarray": { "$ref": "#/definitions/textStringArray_def" },
+    "value": { "$ref": "#/definitions/numericValue_def" },
+    "valuearray": { "$ref": "#/definitions/numericValueArray_def" },
+    "exact": { "$ref": "unit.json#/properties/exact" }
   }
 }
