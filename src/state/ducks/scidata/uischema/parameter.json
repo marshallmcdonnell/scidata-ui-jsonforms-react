@@ -55,12 +55,12 @@
         {
           "type": "Control",
           "label": "Single Value",
-          "scope": "#/properties/value"
+          "scope": "#/properties/parameter"
         },
         {
           "type": "Control",
           "label": "Value Array",
-          "scope": "#/properties/valuearray"
+          "scope": "#/properties/parameterArray"
         }
       ]
     }
