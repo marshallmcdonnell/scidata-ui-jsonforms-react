@@ -13,7 +13,7 @@
     },
     {
       "type": "Control",
-      "label": "Scope",
+      "label": "Scope: which facet is this measured on (internal uri)",
       "scope": "#/properties/scope"
     },
     {

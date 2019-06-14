@@ -1,0 +1,31 @@
+{
+  "type": "VerticalLayout",
+  "elements": [
+    {
+      "type": "Control",
+      "label": "JSON-LD Contexts",
+      "scope": "#/properties/@context"
+    },
+    {
+      "type": "Control",
+      "label": "ID for Dataset",
+      "scope": "#/properties/@id"
+    },
+    {
+      "type": "Control",
+      "label": "Source: which aspect was used to obtain data (internal uri)",
+      "scope": "#/properties/source"
+    },
+    {
+      "type": "Group",
+      "label": "Single Data Point(s)",
+      "elements": [
+        {
+          "type": "Control",
+          "label": "Data Point(s)",
+          "scope": "#/properties/datapoint"
+        }
+      ]
+    }
+  ]
+}
