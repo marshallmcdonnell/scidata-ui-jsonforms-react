@@ -7,29 +7,27 @@
     "siUnit_def": {
       "type": "object",
       "properties": {
-        "@id":    { "type": "string" },
-        "name":   { "type": "string" },
+        "@id": { "type": "string" },
+        "name": { "type": "string" },
         "prefix": { "type": "string" },
-        "power":  { "type": "integer" }
+        "power": { "type": "integer" }
       }
-          
     },
     "conversionFactor_def": {
       "type": "object",
       "properties": {
-        "@id":        { "type": "string" },
-        "fromunit":   { "type": "string" },
-        "tounit":     { "type": "string" },
-        "addend":     { "type": "number" },
-        "minuend":    { "type": "number" },
+        "@id": { "type": "string" },
+        "fromunit": { "type": "string" },
+        "tounit": { "type": "string" },
+        "addend": { "type": "number" },
+        "minuend": { "type": "number" },
         "subtrahend": { "type": "number" },
         "multiplier": { "type": "number" },
-        "dividend":   { "type": "number" },
-        "divisor":    { "type": "number" },
-        "exact":      { "type": "boolean" }
+        "dividend": { "type": "number" },
+        "divisor": { "type": "number" },
+        "exact": { "type": "boolean" }
       }
     }
-
   },
 
   "type": "object",
@@ -37,12 +35,14 @@
   "properties": {
     "@context": {
       "$ref": "context.json#/@context",
-      "default": ["http://stuchalk.github.io/scidata/contexts/scidata_unit.jsonld"]
+      "default": [
+        "http://stuchalk.github.io/scidata/contexts/scidata_unit.jsonld"
+      ]
     },
-    "@id": { 
+    "@id": {
       "type": "string",
       "default": ""
-     },
+    },
     "unitstr": { "type": "string" },
     "unitref": {
       "type": "string",
@@ -53,7 +53,7 @@
     "unitsystemref": {
       "type": "string",
       "format": "uri-reference",
-      "enum": ["sci:imperial"]      
+      "enum": ["sci:imperial"]
     },
     "quantity": { "type": "string" },
     "quantityref": {
@@ -70,8 +70,8 @@
         "siunit": {
           "type": "array",
           "items": { "$ref": "#/definitions/siUnit_def" }
-          }
         }
+      }
     },
     "siunit": { "$ref": "#/definitions/siUnit_def" },
     "siunitstr": { "type": "string" },
@@ -80,21 +80,20 @@
       "format": "uri-reference"
     },
     "prefix": { "type": "string" },
-    "power":  { "type": "integer" },
+    "power": { "type": "integer" },
     "factor": { "$ref": "#/definitions/conversionFactor_def" },
     "factorref": {
       "type": "string",
       "format": "uri-reference"
     },
-    "fromunit":   { "type": "string" },
-    "tounit":     { "type": "string" },
-    "addend":     { "type": "number" },
-    "minuend":    { "type": "number" },
+    "fromunit": { "type": "string" },
+    "tounit": { "type": "string" },
+    "addend": { "type": "number" },
+    "minuend": { "type": "number" },
     "subtrahend": { "type": "number" },
     "multiplier": { "type": "number" },
-    "dividend":   { "type": "number" },
-    "divisor":    { "type": "number" },
-    "exact":      { "type": "boolean" }
+    "dividend": { "type": "number" },
+    "divisor": { "type": "number" },
+    "exact": { "type": "boolean" }
   }
 }
-
