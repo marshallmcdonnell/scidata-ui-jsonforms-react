@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "701ae6abd4719e9c2ada3535a497b341",
-    "url": "/scidata-ui-jsonforms-react/static/media/outline-icons.701ae6ab.eot"
+    "revision": "cd6c777f1945164224dee082abaea03a",
+    "url": "/scidata-ui-jsonforms-react/static/media/outline-icons.cd6c777f.woff2"
   },
   {
-    "revision": "d9b7c243360733a3d76f",
-    "url": "/scidata-ui-jsonforms-react/static/js/main.44e93a7b.chunk.js"
+    "revision": "74b2baad7835057bc6d1",
+    "url": "/scidata-ui-jsonforms-react/static/js/main.7d347679.chunk.js"
   },
   {
     "revision": "a1a749e89f578a49306ec2b055c073da",
@@ -20,12 +20,12 @@ self.__precacheManifest = [
     "url": "/scidata-ui-jsonforms-react/static/media/flags.9c74e172.png"
   },
   {
-    "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
-    "url": "/scidata-ui-jsonforms-react/static/media/icons.8e3c7f55.eot"
-  },
-  {
     "revision": "0ab54153eeeca0ce03978cc463b257f7",
     "url": "/scidata-ui-jsonforms-react/static/media/icons.0ab54153.woff2"
+  },
+  {
+    "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
+    "url": "/scidata-ui-jsonforms-react/static/media/icons.8e3c7f55.eot"
   },
   {
     "revision": "faff92145777a3cbaf8e7367b4807987",
@@ -36,16 +36,12 @@ self.__precacheManifest = [
     "url": "/scidata-ui-jsonforms-react/static/media/icons.b87b9ba5.ttf"
   },
   {
-    "revision": "962a1bf31c081691065fe333d9fa8105",
-    "url": "/scidata-ui-jsonforms-react/static/media/icons.962a1bf3.svg"
+    "revision": "701ae6abd4719e9c2ada3535a497b341",
+    "url": "/scidata-ui-jsonforms-react/static/media/outline-icons.701ae6ab.eot"
   },
   {
     "revision": "891e2e7cd8328f14e03a",
     "url": "/scidata-ui-jsonforms-react/static/js/runtime~main.7900864c.js"
-  },
-  {
-    "revision": "cd6c777f1945164224dee082abaea03a",
-    "url": "/scidata-ui-jsonforms-react/static/media/outline-icons.cd6c777f.woff2"
   },
   {
     "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
@@ -64,6 +60,10 @@ self.__precacheManifest = [
     "url": "/scidata-ui-jsonforms-react/static/media/brand-icons.13db00b7.eot"
   },
   {
+    "revision": "962a1bf31c081691065fe333d9fa8105",
+    "url": "/scidata-ui-jsonforms-react/static/media/icons.962a1bf3.svg"
+  },
+  {
     "revision": "e8c322de9658cbeb8a774b6624167c2c",
     "url": "/scidata-ui-jsonforms-react/static/media/brand-icons.e8c322de.woff2"
   },
@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/scidata-ui-jsonforms-react/static/css/2.51a92e1b.chunk.css"
   },
   {
-    "revision": "9797ac6150052f058e2124dca16da5f9",
+    "revision": "bcbd65b98cdc026c8c0f6c8122cfb863",
     "url": "/scidata-ui-jsonforms-react/index.html"
   }
 ];
