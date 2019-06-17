@@ -15,7 +15,6 @@ function generateSchemaResolver(name, schema) {
 }
 
 // Combined schema validator and schema resolver
-console.log('SchemaList:', schemaList)
 const ajv = createAjv({useDefaults: true});
 var resolvers = {'context': generateSchemaResolver('context', schemas['context'])};
 for( var i = 0; i < schemaList.length; i++) {
