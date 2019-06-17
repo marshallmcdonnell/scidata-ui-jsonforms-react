@@ -10,7 +10,6 @@ export default function configureStore(initialState) {
   //const rootReducer = combineReducers( reducers );
 
   const store = createStore(rootReducer, initialState);
-  console.log(store.getState());
 
   // Combine sub-schema to single for intial store
   const data = {};

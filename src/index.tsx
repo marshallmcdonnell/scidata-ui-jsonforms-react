@@ -6,13 +6,7 @@ import { materialCells, materialRenderers } from '@jsonforms/material-renderers'
 
 import configureStore from './state/store';
 import SciDataTabs from './views/components/SciDataTabs';
-
-import schemas from './state/ducks/scidata/schema';
-import uischemas from './state/ducks/scidata/uischema';
 import datasets from './state/ducks/scidata/datasets';
-
-console.log(schemas)
-console.log(uischemas)
 
 const sciDataInitialState: JsonFormsState = {
   jsonforms: {
@@ -22,8 +16,6 @@ const sciDataInitialState: JsonFormsState = {
 };
 
 const store = configureStore(sciDataInitialState);
-
-
 
 const App = () => (
   <Provider store={store}>

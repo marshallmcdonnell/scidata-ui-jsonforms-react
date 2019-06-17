@@ -8,6 +8,10 @@ import { getData } from "@jsonforms/core";
 import SciDataTab from "./SciDataTab";
 import SciDataTabPanel from "./SciDataTabPanel";
 
+Array.prototype.contains = function(element) {
+  return this.indexOf(element) > -1;
+};
+
 // Tabs Component
 class SciDataTabs extends Component {
   constructor(props) {
@@ -20,6 +24,16 @@ class SciDataTabs extends Component {
     };
 
     this.defaultDisplay = <h1> </h1>;
+    this.methodChoices = [
+      "basisset",
+      "calculation",
+      "measurement",
+      "methodology",
+      "procedure",
+      "resource",
+      "software"
+    ];
+    this.dataChoices = ["dataset", "parameter", "unit", "value"];
 
     this.changeTab = this.changeTab.bind(this);
     this.changeChildTab = this.changeChildTab.bind(this);
@@ -127,16 +141,20 @@ class SciDataTabs extends Component {
     );
   }
 
-  renderTabs() {
+  renderTabs(choices) {
     const datasets = this.props.datasets;
-    const tabs = datasets.map(dataset => this.renderTabFromDataset(dataset));
+    const selection = datasets.filter(obj => choices.contains(obj.name));
+    const tabs = selection.map(dataset => this.renderTabFromDataset(dataset));
     return tabs;
   }
 
   render() {
     const display = this.renderActiveTabPanel();
-    var tabs = this.renderTabs();
+    const methodTabs = this.renderTabs(this.methodChoices);
+    const dataTabs = this.renderTabs(this.dataChoices);
 
+
+    console.log("datasets", this.props.datasets);
     //const myArray = this.createTabs();
     return (
       <div>
@@ -144,9 +162,12 @@ class SciDataTabs extends Component {
           <Grid.Column width={4}>
             <Menu fluid vertical tabular>
               <Container>
+              <Menu.Item header>METHOD</Menu.Item>
+                <Divider />
+                {methodTabs}
                 <Menu.Item header>DATA</Menu.Item>
                 <Divider />
-                {tabs}
+                {dataTabs}
               </Container>
             </Menu>
           </Grid.Column>

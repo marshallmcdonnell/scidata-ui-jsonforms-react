@@ -1,0 +1,30 @@
+{
+  "type": "VerticalLayout",
+  "elements": [
+    {
+      "type": "Control",
+      "label": "JSON-LD Contexts",
+      "scope": "#/properties/@context"
+    },
+    {
+      "type": "Control",
+      "label": "ID for Resource",
+      "scope": "#/properties/@id"
+    },
+    {
+      "type": "Control",
+      "label": "Type for Resource",
+      "scope": "#/properties/type"
+    },
+    {
+      "type": "Control",
+      "label": "Vendor of Resource",
+      "scope": "#/properties/vendor"
+    },
+    {
+      "type": "Control",
+      "label": "Catalog Number of Resource",
+      "scope": "#/properties/catalognumber"
+    }
+  ]
+}
