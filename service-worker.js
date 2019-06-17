@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/scidata-ui-jsonforms-react/precache-manifest.a8dc2300dbdfacc21ea6b0ecc23606d3.js"
+  "/scidata-ui-jsonforms-react/precache-manifest.575ad27edc0769e39091694a27c0db95.js"
 );
 
 workbox.clientsClaim();
