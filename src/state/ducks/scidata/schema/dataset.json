@@ -58,6 +58,33 @@
           "items": { "type": "string" }
         }
       }
+    },
+    "dataSet_def": {
+      "type": "object",
+      "id": "dataSetID",
+      "properties": {
+        "@id": { "type": "string" },
+        "uid": { "type": "string" },
+        "name": { "type": "string" },
+        "source": { "type": "string" },
+        "scope": { "type": "string" },
+        "attribute": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "datapoint": {
+          "type": "array",
+          "items": { "$ref": "parameter.json#/properties/parameter" }
+        },
+        "dataseries": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/dataSeries_def" }
+        },
+        "datagroup": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
     }
   },
   "properties": {
@@ -89,6 +116,7 @@
     "datagroup": {
       "type": "array",
       "items": { "$ref": "#/definitions/dataGroup_def" }
-    }
+    },
+    "dataset": { "$ref": "#/definitions/dataSet_def" }
   }
 }

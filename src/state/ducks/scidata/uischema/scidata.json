@@ -1,0 +1,131 @@
+{
+  "type": "VerticalLayout",
+  "elements": [
+    {
+      "type": "Control",
+      "label": "JSON-LD Contexts",
+      "scope": "#/properties/@context"
+    },
+    {
+      "type": "Group",
+      "label": "General Information for SciData Model",
+      "elements": [
+        {
+          "type": "Control",
+          "label": "UID",
+          "scope": "#/properties/uid"
+        },
+        {
+          "type": "Control",
+          "label": "Title",
+          "scope": "#/properties/title"
+        },
+        {
+          "type": "Control",
+          "label": "Project",
+          "scope": "#/properties/project"
+        },
+        {
+          "type": "Control",
+          "label": "Author(s)",
+          "scope": "#/properties/author"
+        },
+        {
+          "type": "Control",
+          "label": "Description",
+          "scope": "#/properties/description"
+        },
+        {
+          "type": "Control",
+          "label": "Publisher",
+          "scope": "#/properties/publisher"
+        },
+        {
+          "type": "Control",
+          "label": "Version",
+          "scope": "#/properties/version"
+        },
+        {
+          "type": "Control",
+          "label": "Keywords",
+          "scope": "#/properties/keywords"
+        },
+        {
+          "type": "Group",
+          "label": "Input for Time",
+          "elements": [
+            {
+              "type": "Control",
+              "label": "Start Time",
+              "scope": "#/properties/starttime"
+            },
+            {
+              "type": "Control",
+              "label": "End Time",
+              "scope": "#/properties/endtime"
+            },
+            {
+              "type": "Control",
+              "label": "Duration (from Start Time)",
+              "scope": "#/properties/duration"
+            }
+          ]
+        },
+        {
+          "type": "Group",
+          "label": "Links",
+          "elements": [
+            {
+              "type": "Control",
+              "label": "Permanent Link for this SciData Model",
+              "scope": "#/properties/permalink"
+            },
+            {
+              "type": "Control",
+              "label": "Links to Related SciData Models",
+              "scope": "#/properties/related"
+            }
+          ]
+        },
+        {
+          "type": "Control",
+          "title": "Table of Contents",
+          "label": "Table of Contents (URIs for Methodology's Aspects, System's Facets, and Dataset elements)",
+          "scope": "#/properties/toc"
+        }
+      ]
+    },
+    {
+      "type": "Group",
+      "label": "SciData Model",
+      "elements": [
+        {
+          "type": "Control",
+          "label": "SciData Sections",
+          "scope": "#/properties/scidata"
+        }
+      ]
+    },
+    {
+      "type": "Group",
+      "label": "SciData Data Provenance and References",
+      "elements": [
+        {
+          "type": "Control",
+          "label": "References",
+          "scope": "#/properties/references"
+        },
+        {
+          "type": "Control",
+          "label": "Sources",
+          "scope": "#/properties/sources"
+        },
+        {
+          "type": "Control",
+          "label": "Rights",
+          "scope": "#/properties/rights"
+        }
+      ]
+    }
+  ]
+}

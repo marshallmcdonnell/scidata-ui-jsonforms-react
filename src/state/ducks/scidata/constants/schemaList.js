@@ -4,6 +4,7 @@ export default [
     'methodology',
     'parameter',
     'resource',
+    'scidata',
     'unit', 
     'value',
 ]
