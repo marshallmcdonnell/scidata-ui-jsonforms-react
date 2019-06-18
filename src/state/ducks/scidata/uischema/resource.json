@@ -18,6 +18,11 @@
     },
     {
       "type": "Control",
+      "label": "Name of Resource",
+      "scope": "#/properties/name"
+    },
+    {
+      "type": "Control",
       "label": "Vendor of Resource",
       "scope": "#/properties/vendor"
     },
@@ -25,6 +30,16 @@
       "type": "Control",
       "label": "Catalog Number of Resource",
       "scope": "#/properties/catalognumber"
+    },
+    {
+      "type": "Control",
+      "label": "Origin of Resource",
+      "scope": "#/properties/resourceOrigin"
+    },
+    {
+      "type": "Control",
+      "label": "Resource Object",
+      "scope": "#/properties/resource"
     }
   ]
 }
