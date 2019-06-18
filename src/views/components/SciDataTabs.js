@@ -24,6 +24,7 @@ class SciDataTabs extends Component {
     };
 
     this.defaultDisplay = <h1> </h1>;
+    this.sciDataChoices = [ "scidata" ];
     this.methodChoices = [
       "basisset",
       "calculation",
@@ -150,6 +151,7 @@ class SciDataTabs extends Component {
 
   render() {
     const display = this.renderActiveTabPanel();
+    const sciDataTabs = this.renderTabs(this.sciDataChoices);
     const methodTabs = this.renderTabs(this.methodChoices);
     const dataTabs = this.renderTabs(this.dataChoices);
 
@@ -161,7 +163,10 @@ class SciDataTabs extends Component {
           <Grid.Column width={4}>
             <Menu fluid vertical tabular>
               <Container>
-              <Menu.Item header>METHOD</Menu.Item>
+                <Menu.Item header>SCIDATA</Menu.Item>
+                <Divider />
+                {sciDataTabs}
+                <Menu.Item header>METHOD</Menu.Item>
                 <Divider />
                 {methodTabs}
                 <Menu.Item header>DATA</Menu.Item>
