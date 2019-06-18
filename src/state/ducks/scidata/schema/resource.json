@@ -8,8 +8,8 @@
       "type": "object",
       "properties": {
         "@id": { "type": "string" },
-        "name": { "type": "string" },
         "type": { "type": "string" },
+        "name": { "type": "string" },
         "vendor": { "type": "string" },
         "catalognumber": { "type": "string" },
         "origin": { "type": "string" }
