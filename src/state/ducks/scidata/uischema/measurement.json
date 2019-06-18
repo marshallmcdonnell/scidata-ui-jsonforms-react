@@ -38,7 +38,7 @@
     },
     {
       "type": "Control",
-      "label": "Settings for the Measurement (array of parameters",
+      "label": "Settings for the Measurement",
       "scope": "#/properties/settings"
     }
   ]

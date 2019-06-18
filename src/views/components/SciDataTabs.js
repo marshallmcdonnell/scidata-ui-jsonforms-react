@@ -153,7 +153,6 @@ class SciDataTabs extends Component {
     const methodTabs = this.renderTabs(this.methodChoices);
     const dataTabs = this.renderTabs(this.dataChoices);
 
-
     console.log("datasets", this.props.datasets);
     //const myArray = this.createTabs();
     return (
