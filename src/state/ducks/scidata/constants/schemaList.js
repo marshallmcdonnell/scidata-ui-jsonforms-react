@@ -1,5 +1,6 @@
 export default [
     'dataset',
+    'measurement',
     'parameter',
     'resource',
     'unit', 

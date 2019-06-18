@@ -1,0 +1,45 @@
+{
+  "type": "VerticalLayout",
+  "elements": [
+    {
+      "type": "Control",
+      "label": "JSON-LD Contexts",
+      "scope": "#/properties/@context"
+    },
+    {
+      "type": "Control",
+      "label": "ID for Measurement",
+      "scope": "#/properties/@id"
+    },
+    {
+      "type": "Control",
+      "label": "Technique for Measurement",
+      "scope": "#/properties/technique"
+    },
+    {
+      "type": "Control",
+      "label": "General Technique Type for Measurement",
+      "scope": "#/properties/techniqueType"
+    },
+    {
+      "type": "Control",
+      "label": "Instrument for Measurement",
+      "scope": "#/properties/instrument"
+    },
+    {
+      "type": "Control",
+      "label": "Instrument Type for Measurement",
+      "scope": "#/properties/instrumentType"
+    },
+    {
+      "type": "Control",
+      "label": "Vendor of Measurement",
+      "scope": "#/properties/vendor"
+    },
+    {
+      "type": "Control",
+      "label": "Settings for the Measurement",
+      "scope": "#/properties/settings"
+    }
+  ]
+}
