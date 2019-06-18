@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Methodology Schema",
+  "description": "JSON schema for methodology",
+  "type": "object",
+  "definitions": {
+    "evaluation_def": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["experimental", "calculation", "extracted"]
+      }
+    },
+    "aspects_def": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          { "$ref": "measurement.json#/properties/measurement" },
+          { "$ref": "resource.json#/properties/resource" }
+        ]
+      }
+    },
+    "methodology_def": {
+      "type": "object",
+      "properties": {
+        "@id": { "type": "string" },
+        "evaluation": { "$ref": "#/definitions/evaluation_def" },
+        "aspects": {"$ref": "#/definitions/aspects_def"}
+      }
+    }
+  },
+  "properties": {
+    "@context": {
+      "$ref": "context.json#/@context",
+      "default": [
+        "http://stuchalk.github.io/scidata/contexts/scidata_measurement.jsonld"
+      ]
+    },
+    "@id": { "type": "string" },
+    "@type": { "type": "string" },
+    "methodology": { "$ref": "#/definitions/methodology_def" },
+    "evaluation": { "$ref": "#/definitions/evaluation_def" },
+    "aspects": { "$ref": "#/definitions/aspects_def" }
+  }
+}
