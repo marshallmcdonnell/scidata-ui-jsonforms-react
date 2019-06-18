@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SciData Schema",
+  "description": "JSON schema for SciData",
+  "type": "object",
+  "definitions": {
+    "author_def": {
+      "type": "object",
+      "properties": {
+        "@id": { "type": "string" },
+        "name": { "type": "string" },
+        "organization": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "orcid": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
+        }
+      }
+    },
+    "toc_def": {
+      "type": "object",
+      "properties": {
+        "@id": { "type": "string", "enum": ["toc"] },
+        "@type": { "type": "string", "enum": ["dc:tableOfContents"] },
+        "sections": {
+          "type": "array",
+          "items": { "type": "string", "format": "uri" }
+        }
+      }
+    },
+    "scidata_def": {
+      "type": "object",
+      "properties": {
+        "@id": { "type": "string", "default": "scidata/" },
+        "@type": { "type": "string", "enum": ["dc:tableOfContents"] },
+        "type": {
+          "type": "string",
+          "enum": ["property value", "property value(s)"]
+        },
+        "property": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "kind": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "datapoint",
+              "dataseries",
+              "datagroup",
+              "single reading",
+              "spectrum",
+              "time based array"
+            ]
+          }
+        },
+        "methodology": { "$ref": "methodology.json#/properties/methodology" },
+        "system": { "type": "string" },
+        "dataset": { "$ref": "dataset.json#/properties/dataset" }
+      }
+    },
+    "source_def": {
+      "type": "object",
+      "properties": {
+        "@id": { "type": "string", "format": " uri-reference" },
+        "@type": { "type": "string", "enum": ["dc:source"] },
+        "citation": { "type": "string" },
+        "reftype": {
+          "type": "string",
+          "enum": ["original paper", "journal article", "database"]
+        },
+        "url": { "type": "string", "format": " uri" },
+        "doi": { "type": "string", "format": " uri" }
+      }
+    },
+    "rights_def": {
+      "type": "object",
+      "properties": {
+        "@id": { "type": "string", "enum": ["rights"] },
+        "holder": { "type": "string" },
+        "license": { "type": "string", "format": " uri" }
+      }
+    }
+  },
+  "properties": {
+    "@context": {
+      "$ref": "context.json#/@context",
+      "default": [
+        "http://stuchalk.github.io/scidata/contexts/scidata_scidata.jsonld"
+      ]
+    },
+    "uid": { "type": "string", "default": "" },
+    "title": { "type": "string" },
+    "project": { "type": "string" },
+    "author": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/author_def" }
+    },
+    "description": { "type": "string" },
+    "publisher": { "type": "string" },
+    "version": { "type": "integer" },
+    "keywords": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "starttime": { "type": "string", "format": "date-time" },
+    "endtime": { "type": "string", "format": "date-time" },
+    "duration": { "type": "number" },
+    "permalink": { "type": "string", "format": "uri" },
+    "related": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" }
+    },
+    "toc": { "$ref": "#/definitions/toc_def" },
+    "scidata": { "$ref": "#/definitions/scidata_def" },
+    "references": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/source_def" }
+    },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/source_def" }
+    },
+    "rights": { "$ref": "#/definitions/rights_def" }
+  }
+}
