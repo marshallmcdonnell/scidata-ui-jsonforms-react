@@ -16,7 +16,6 @@
         "settings": {
           "type": "array",
           "items": { "$ref": "parameter.json#/properties/parameter" }
-          }
         }
       }
     }
