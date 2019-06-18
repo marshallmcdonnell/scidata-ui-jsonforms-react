@@ -16,6 +16,7 @@
         "settings": {
           "type": "array",
           "items": { "$ref": "parameter.json#/properties/parameter" }
+          }
         }
       }
     }
@@ -36,6 +37,7 @@
     "settings": {
       "type": "array",
       "items": { "$ref": "parameter.json#/properties/parameter" }
-    }
+    },
+    "measurement": { "$ref": "#/definitions/measurement_def" }
   }
 }
