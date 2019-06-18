@@ -1,0 +1,30 @@
+{
+  "type": "VerticalLayout",
+  "elements": [
+    {
+      "type": "Control",
+      "label": "JSON-LD Contexts",
+      "scope": "#/properties/@context"
+    },
+    {
+      "type": "Control",
+      "label": "ID for Methodology",
+      "scope": "#/properties/@id"
+    },
+    {
+      "type": "Control",
+      "label": "Type for Methodology",
+      "scope": "#/properties/@type"
+    },
+    {
+      "type": "Control",
+      "label": "Evaulation Type for Methodology",
+      "scope": "#/properties/evaluation"
+    },
+    {
+      "type": "Control",
+      "label": "Aspects of Methodology",
+      "scope": "#/properties/aspects"
+    }
+  ]
+}

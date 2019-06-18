@@ -35,11 +35,6 @@
       "type": "Control",
       "label": "Origin of Resource",
       "scope": "#/properties/resourceOrigin"
-    },
-    {
-      "type": "Control",
-      "label": "Resource Object",
-      "scope": "#/properties/resource"
     }
   ]
 }
