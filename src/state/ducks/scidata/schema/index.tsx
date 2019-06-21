@@ -21,5 +21,5 @@ export const schemas = {
 };
 
 export const schemaList = Object.keys(schemas).filter(
-  (value, index, arr) => value !== "context"
+  (value) => value !== "context"
 );
