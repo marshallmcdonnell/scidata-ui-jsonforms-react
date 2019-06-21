@@ -1,7 +1,6 @@
 
-import schemas from './schema';
+import { schemas, schemaList } from './schema';
 import uischemas from './uischema';
-import schemaList from './constants/schemaList';
 
 function createSchemaDataset(name, schema, uischema) {
     return {
