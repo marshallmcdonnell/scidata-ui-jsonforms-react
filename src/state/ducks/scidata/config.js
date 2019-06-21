@@ -1,6 +1,5 @@
 import { createAjv } from "@jsonforms/core";
-import schemas from './schema';
-import schemaList from './constants/schemaList';
+import { schemas, schemaList }  from './schema';
 
 function generateSchemaResolver(name, schema) {
   return {
